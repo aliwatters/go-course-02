@@ -12,17 +12,24 @@ import (
 func main() {
 	const (
 		xmin, ymin, xmax, ymax = -2, -2, +2, +2
-		width, height          = 1024, 1024
+		width, height          = 2048, 2048
 	)
 
 	img := image.NewRGBA(image.Rect(0, 0, width, height))
 
 	for py := 0; py < height; py++ {
 		y := float64(py)/height*(ymax-ymin) + ymin
+		y2 := float64(py+1)/height*(ymax-ymin) + ymin
 		for px := 0; px < width; px++ {
 			x := float64(px)/width*(xmax-xmin) + xmin
-			z := complex(x, y)
+			x2 := float64(px+1)/width*(xmax-xmin) + xmin
+			z0 := complex(x, y)
+			z1 := complex(x2, y)
+			z2 := complex(x, y2)
+			z3 := complex(x2, y2)
 
+			// supersampling ... 4 offset complex numbers
+			z := (z0 + z1 + z2 + z3) / 4
 			// Image point (px, py) represents complex value z
 			img.Set(px, py, mandelbrot(z))
 		}
