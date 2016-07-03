@@ -1,4 +1,6 @@
-# Go Course 2 - from the book "The Go Programming Language"
+# Exercises and Examples from "The Go Programming Language"
 Alan A. A. Donovan, Brian W. Kernighan - Addison-Wesley
 
-## Chapter 1: Tutorial
+Great book - highly recommended.
+
+See: http://gopl.io and https://github.com/adonovan/gopl.io 
