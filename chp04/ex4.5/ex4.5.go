@@ -2,7 +2,8 @@ package main
 
 import "fmt"
 
-func eliminateDups(s []string) []string {
+// EliminateDups removes duplicate adjacent strings in a slice of strings
+func EliminateDups(s []string) []string {
 	l := len(s)
 	if l == 0 {
 		return s
@@ -29,6 +30,6 @@ func main() {
 	s := []string{"a", "b", "b", "b", "c", "b", "d"}
 
 	fmt.Println("In: ", s)
-	s = eliminateDups(s)
+	s = EliminateDups(s)
 	fmt.Println("Out:", s)
 }
