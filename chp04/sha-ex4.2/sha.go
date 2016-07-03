@@ -12,10 +12,10 @@ import (
 var ds = flag.Int("ds", 256, "Digest size to use; [256, 384, 512]")
 
 func init() {
-	flag.Parse() // needed to actually put values in *ds {
+	flag.Parse() // needed to actually put values in *ds
 	switch *ds {
 	case 256, 384, 512:
-		// do nothing here
+		// do nothing
 	default:
 		fmt.Println("Error: Invalid digest size")
 		os.Exit(1)
